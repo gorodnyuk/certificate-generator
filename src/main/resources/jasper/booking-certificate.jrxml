@@ -21,31 +21,31 @@
 				<imageExpression><![CDATA[$P{leftBackground}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="184" y="30" width="608" height="130" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
+				<reportElement x="220" y="30" width="572" height="80" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
 				<textElement textAlignment="Center">
-					<font fontName="DejaVu Sans" size="72" isBold="true"/>
+					<font fontName="DejaVu Sans" size="64" isBold="true"/>
 				</textElement>
 				<text><![CDATA[СЕРТИФИКАТ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="301" y="110" width="458" height="90" uuid="f4eaccb7-590e-4fb7-bc50-685c9e7591ad"/>
+				<reportElement x="364" y="110" width="419" height="50" uuid="f4eaccb7-590e-4fb7-bc50-685c9e7591ad"/>
 				<textElement textAlignment="Center">
-					<font fontName="DejaVu Sans" size="50" isBold="true"/>
+					<font fontName="DejaVu Sans" size="39" isBold="true"/>
 				</textElement>
 				<text><![CDATA[на бронь друга]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="460" y="210" width="280" height="50" uuid="b75be0a4-030f-4b52-bb16-317d5ce2f969"/>
+				<reportElement x="525" y="200" width="240" height="30" uuid="b75be0a4-030f-4b52-bb16-317d5ce2f969"/>
 				<textElement textAlignment="Center">
-					<font fontName="DejaVu Sans" size="33" isBold="true"/>
+					<font fontName="DejaVu Sans" size="25" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Выдан на имя:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="420" y="195" width="290" height="1" uuid="5d06d503-062e-4602-9f07-ec431af4aa85"/>
+				<reportElement x="470" y="164" width="274" height="1" uuid="5d06d503-062e-4602-9f07-ec431af4aa85"/>
 			</line>
 			<textField>
-				<reportElement x="258" y="263" width="532" height="119" uuid="becc35eb-a7f3-442b-a3bd-ed7e0169b24f"/>
+				<reportElement x="258" y="243" width="532" height="97" uuid="becc35eb-a7f3-442b-a3bd-ed7e0169b24f"/>
 				<box>
 					<pen lineWidth="1.0"/>
 				</box>
@@ -55,16 +55,16 @@
 				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="297" y="396" width="261" height="39" uuid="1d0d18a9-956f-4877-9892-91037a9924c9"/>
+				<reportElement x="294" y="357" width="303" height="39" uuid="1d0d18a9-956f-4877-9892-91037a9924c9"/>
 				<textElement textAlignment="Center">
 					<font fontName="DejaVu Sans" size="25" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Дата бронирования:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="566" y="398" width="220" height="35" uuid="7ed1815e-77c2-41f7-ad3d-558e71e75d50"/>
+				<reportElement x="597" y="357" width="246" height="35" uuid="7ed1815e-77c2-41f7-ad3d-558e71e75d50"/>
 				<textElement>
-					<font size="25" isBold="false" isUnderline="true"/>
+					<font fontName="DejaVu Sans" size="25" isBold="false" isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{bookingDate}]]></textFieldExpression>
 			</textField>
