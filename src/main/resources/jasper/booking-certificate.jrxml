@@ -8,7 +8,8 @@
 	<parameter name="bookingDate" class="java.time.LocalDate">
 		<parameterDescription><![CDATA[Дата бронирования]]></parameterDescription>
 	</parameter>
-	<parameter name="leftBackground" class="java.lang.String"/>
+	<parameter name="leftImage" class="java.lang.String"/>
+	<parameter name="stampImage" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -18,8 +19,23 @@
 			<property name="com.jaspersoft.studio.layout"/>
 			<image scaleImage="FillFrame" isLazy="true">
 				<reportElement x="0" y="0" width="799" height="554" uuid="387d3889-e044-4e07-b529-daeba9f1f717"/>
-				<imageExpression><![CDATA[$P{leftBackground}]]></imageExpression>
+				<imageExpression><![CDATA[$P{leftImage}]]></imageExpression>
 			</image>
+			<image>
+				<reportElement x="630" y="387" width="150" height="150" uuid="b312aad1-05d0-4fea-89ff-4d6215c1a54e">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{stampImage}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="606" y="537" width="202" height="18" uuid="8542c998-cc56-444d-ac07-786d87b1ecbf"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[место печати]]></text>
+			</staticText>
 			<staticText>
 				<reportElement x="220" y="30" width="572" height="80" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
 				<textElement textAlignment="Center">

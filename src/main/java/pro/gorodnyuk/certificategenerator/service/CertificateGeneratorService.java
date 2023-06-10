@@ -24,14 +24,19 @@ public class CertificateGeneratorService {
             throws FileNotFoundException, JRException {
         String filePath = ResourceUtils.getFile("classpath:jasper/booking-certificate.jrxml")
                 .getAbsolutePath();
-        String leftBackgroundPath = ResourceUtils.getFile("classpath:jasper/cert-background.png")
+        String leftImagePath = ResourceUtils.getFile("classpath:jasper/cert-background.png")
                 .getAbsolutePath();
+        String stampImagePath = ResourceUtils.getFile("classpath:jasper/stamp.png")
+                .getAbsolutePath();
+
         JasperReport jasperReport = JasperCompileManager.compileReport(filePath);
         Map<String, Object> params = new HashMap<>();
         params.put("fullName", generateFullName(certificateGeneratorDto.getBookingPerson()));
         params.put("bookingDate", certificateGeneratorDto.getBookingDate());
-        params.put("leftBackground", leftBackgroundPath);
+        params.put("leftImage", leftImagePath);
+        params.put("stampImage", stampImagePath);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
+
         return new InputStreamResource(new ByteArrayInputStream(JasperExportManager.exportReportToPdf(jasperPrint)));
     }
 
