@@ -5,9 +5,10 @@
 	<parameter name="fullName" class="java.lang.String">
 		<parameterDescription><![CDATA[Полное имя бронируемого друга]]></parameterDescription>
 	</parameter>
-	<parameter name="bookingDate" class="java.util.Date">
+	<parameter name="bookingDate" class="java.time.LocalDate">
 		<parameterDescription><![CDATA[Дата бронирования]]></parameterDescription>
 	</parameter>
+	<parameter name="leftBackground" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -17,7 +18,7 @@
 			<property name="com.jaspersoft.studio.layout"/>
 			<image scaleImage="FillFrame" isLazy="true">
 				<reportElement x="0" y="0" width="799" height="554" uuid="387d3889-e044-4e07-b529-daeba9f1f717"/>
-				<imageExpression><![CDATA["cert-background.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{leftBackground}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="184" y="30" width="608" height="130" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
