@@ -2,6 +2,12 @@
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db418c67-62e1-4cb0-9862-70a1135805de">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="fullName" class="java.lang.String">
+		<parameterDescription><![CDATA[Полное имя бронируемого друга]]></parameterDescription>
+	</parameter>
+	<parameter name="bookingDate" class="java.util.Date">
+		<parameterDescription><![CDATA[Дата бронирования]]></parameterDescription>
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -9,14 +15,58 @@
 		<band height="555" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<property name="com.jaspersoft.studio.layout"/>
-			<staticText>
-				<reportElement x="400" y="94" width="100" height="30" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
-				<text><![CDATA[Static Text]]></text>
-			</staticText>
 			<image scaleImage="FillFrame" isLazy="true">
 				<reportElement x="0" y="0" width="799" height="554" uuid="387d3889-e044-4e07-b529-daeba9f1f717"/>
-				<imageExpression><![CDATA["C:/Users/serge/Desktop/cert-background.png"]]></imageExpression>
+				<imageExpression><![CDATA["cert-background.png"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="184" y="30" width="608" height="130" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="72" isBold="true"/>
+				</textElement>
+				<text><![CDATA[СЕРТИФИКАТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="110" width="458" height="90" uuid="f4eaccb7-590e-4fb7-bc50-685c9e7591ad"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="50" isBold="true"/>
+				</textElement>
+				<text><![CDATA[на бронь друга]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="210" width="280" height="50" uuid="b75be0a4-030f-4b52-bb16-317d5ce2f969"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="33" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Выдан на имя:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="420" y="195" width="290" height="1" uuid="5d06d503-062e-4602-9f07-ec431af4aa85"/>
+			</line>
+			<textField>
+				<reportElement x="258" y="263" width="532" height="119" uuid="becc35eb-a7f3-442b-a3bd-ed7e0169b24f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Comic Sans MS" size="40"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="297" y="396" width="261" height="39" uuid="1d0d18a9-956f-4877-9892-91037a9924c9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="25" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Дата бронирования:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="566" y="398" width="220" height="35" uuid="7ed1815e-77c2-41f7-ad3d-558e71e75d50"/>
+				<textElement>
+					<font size="25" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bookingDate}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
