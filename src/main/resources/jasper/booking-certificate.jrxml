@@ -23,21 +23,21 @@
 			<staticText>
 				<reportElement x="184" y="30" width="608" height="130" uuid="92145a5d-faf2-4445-8577-abd74b9b86e8"/>
 				<textElement textAlignment="Center">
-					<font fontName="Comic Sans MS" size="72" isBold="true"/>
+					<font fontName="DejaVu Sans" size="72" isBold="true"/>
 				</textElement>
 				<text><![CDATA[СЕРТИФИКАТ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="301" y="110" width="458" height="90" uuid="f4eaccb7-590e-4fb7-bc50-685c9e7591ad"/>
 				<textElement textAlignment="Center">
-					<font fontName="Comic Sans MS" size="50" isBold="true"/>
+					<font fontName="DejaVu Sans" size="50" isBold="true"/>
 				</textElement>
 				<text><![CDATA[на бронь друга]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="460" y="210" width="280" height="50" uuid="b75be0a4-030f-4b52-bb16-317d5ce2f969"/>
 				<textElement textAlignment="Center">
-					<font fontName="Comic Sans MS" size="33" isBold="true"/>
+					<font fontName="DejaVu Sans" size="33" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Выдан на имя:]]></text>
 			</staticText>
@@ -50,14 +50,14 @@
 					<pen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Comic Sans MS" size="40"/>
+					<font fontName="DejaVu Sans" size="40"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="297" y="396" width="261" height="39" uuid="1d0d18a9-956f-4877-9892-91037a9924c9"/>
 				<textElement textAlignment="Center">
-					<font fontName="Comic Sans MS" size="25" isBold="false"/>
+					<font fontName="DejaVu Sans" size="25" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Дата бронирования:]]></text>
 			</staticText>
