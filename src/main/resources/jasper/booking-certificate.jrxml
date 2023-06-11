@@ -5,7 +5,7 @@
 	<parameter name="fullName" class="java.lang.String">
 		<parameterDescription><![CDATA[Полное имя бронируемого друга]]></parameterDescription>
 	</parameter>
-	<parameter name="bookingDate" class="java.time.LocalDate">
+	<parameter name="bookingDate" class="java.lang.String">
 		<parameterDescription><![CDATA[Дата бронирования]]></parameterDescription>
 	</parameter>
 	<parameter name="leftImage" class="java.lang.String"/>

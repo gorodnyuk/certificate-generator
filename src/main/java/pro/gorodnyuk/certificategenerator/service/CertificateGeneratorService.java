@@ -14,11 +14,14 @@ import pro.gorodnyuk.certificategenerator.api.CertificateGeneratorDto;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class CertificateGeneratorService {
+
+    private static final DateTimeFormatter LOCAL_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
     public InputStreamResource generate(CertificateGeneratorDto certificateGeneratorDto)
             throws FileNotFoundException, JRException {
@@ -32,7 +35,7 @@ public class CertificateGeneratorService {
         JasperReport jasperReport = JasperCompileManager.compileReport(filePath);
         Map<String, Object> params = new HashMap<>();
         params.put("fullName", generateFullName(certificateGeneratorDto.getBookingPerson()));
-        params.put("bookingDate", certificateGeneratorDto.getBookingDate());
+        params.put("bookingDate", LOCAL_DATE_FORMATTER.format(certificateGeneratorDto.getBookingDate()));
         params.put("leftImage", leftImagePath);
         params.put("stampImage", stampImagePath);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
