@@ -13,7 +13,7 @@
 
     <groupId>pro.gorodnyuk</groupId>
     <artifactId>certificate-generator</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <name>certificate-generator</name>
     <description>Certificate generator for booking friends on weekends</description>
 
