@@ -26,7 +26,6 @@ public class CertificateGeneratorDto {
         @NotBlank
         private String firstName;
 
-        @NotBlank
         private String middleName;
     }
 }
