@@ -6,6 +6,7 @@ import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +30,7 @@ public class CertificateGeneratorController {
             throws JRException, FileNotFoundException {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDisposition(ContentDisposition.builder("attachment")
-                .filename(transliterateName(request.getBookingPerson()) + "-booking-certificate.pdf")
+                .filename(transliterate(request) + "-booking-certificate.pdf")
                 .build());
         return ResponseEntity.ok()
                 .headers(headers)
@@ -37,8 +38,15 @@ public class CertificateGeneratorController {
                 .body(service.generate(request));
     }
 
-    private String transliterateName(CertificateGeneratorDto.BookingPerson bookingPerson) {
+    private String transliterate(CertificateGeneratorDto request) {
+        CertificateGeneratorDto.BookingPerson bookingPerson = request.getBookingPerson();
         return transliterationService
-                .transliterate("%s-%s-%s".formatted(bookingPerson.getLastName(), bookingPerson.getFirstName(), bookingPerson.getMiddleName())).toLowerCase();
+                .transliterate("%s-%s%s-%s".formatted(
+                                bookingPerson.getLastName(),
+                                bookingPerson.getFirstName(),
+                                StringUtils.hasText(bookingPerson.getMiddleName()) ? "-" + bookingPerson.getMiddleName() : "",
+                                request.getBookingDate()
+                        )
+                ).toLowerCase();
     }
 }
